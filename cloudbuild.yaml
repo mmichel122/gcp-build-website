@@ -1,3 +1,5 @@
 steps:
 - name: 'gcr.io/cloud-builders/gsutil'
   args: ['cp', 'Elements/*/*', 'gs://build-prep-bucket']
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ['iam', 'ch ', 'allUsers:objectViewer', 'gs://build-prep-bucket']
